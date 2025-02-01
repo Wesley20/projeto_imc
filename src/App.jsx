@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/404";
 import NavBar from "./components/NavBar";
 import { Box } from "@mui/system";
+import AdSense from 'react-adsense';
 
 function App() {
   return (
@@ -30,18 +31,13 @@ function App() {
             overflowY: "auto", // Permite rolar o conteúdo dentro do lado esquerdo se necessário
           }}
         >
-          {/* Bloco de Anúncio no lado esquerdo */}
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block", marginBottom: "20px" }}
-            data-ad-client="ca-pub-8402001574373191"
-            data-ad-slot="9337946346"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          <AdSense.Google
+            client="ca-pub-8402001574373191"
+            slot="9337946346"
+            style={{ display: 'block' }}
+            layout='in-article'
+            format='fluid'
+          />
         </Box>
 
         {/* Meio - Conteúdo Principal */}
@@ -70,18 +66,13 @@ function App() {
             overflowY: "auto", // Permite rolar o conteúdo dentro do lado direito se necessário
           }}
         >
-          {/* Bloco de Anúncio no lado direito */}
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block", marginBottom: "20px" }}
-            data-ad-client="ca-pub-8402001574373191"
-            data-ad-slot="9337946346"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+            <AdSense.Google
+            client="ca-pub-8402001574373191"
+            slot="9337946346"
+            style={{ display: 'block' }}
+            layout='in-article'
+            format='fluid'
+            />
         </Box>
       </Box>
     </Router>
