@@ -1,27 +1,11 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import NotFound from "./pages/404";
 import NavBar from "./components/NavBar";
 import { Box } from "@mui/system";
 
 function App() {
-  useEffect(() => {
-    // Adicionando o script do Google AdSense na página
-    const script = document.createElement("script");
-    script.src =
-      "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8402001574373191";
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    document.body.appendChild(script);
-
-    return () => {
-      // Limpeza do script quando o componente for desmontado
-      document.body.removeChild(script);
-    };
-  }, []); // O efeito só é executado uma vez, quando o componente é montado
-
   return (
     <Router>
       <NavBar />
@@ -31,10 +15,10 @@ function App() {
           display: "flex",
           flexDirection: "row",
           height: "100vh", // Garante que ocupe 100% da altura da tela
-          overflow: "hidden", // Impede o overflow (bar de rolagem)
+          overflow: "hidden", // Impede o overflow (barra de rolagem)
         }}
       >
-        {/* Lado esquerdo */}
+        {/* Lado esquerdo com anúncio */}
         <Box
           sx={{
             width: 250, // Largura fixa
@@ -46,11 +30,18 @@ function App() {
             overflowY: "auto", // Permite rolar o conteúdo dentro do lado esquerdo se necessário
           }}
         >
-          {/* <h3>Menu Lateral</h3>
-          <ul>
-            <li>Opção 1</li>
-            <li>Opção 2</li>
-          </ul> */}
+          {/* Bloco de Anúncio no lado esquerdo */}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block", marginBottom: "20px" }}
+            data-ad-client="ca-pub-8402001574373191"
+            data-ad-slot="9337946346"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </Box>
 
         {/* Meio - Conteúdo Principal */}
@@ -63,12 +54,11 @@ function App() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/about" element={<About />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
 
-        {/* Lado direito */}
+        {/* Lado direito com anúncio */}
         <Box
           sx={{
             width: 250, // Largura fixa
@@ -80,11 +70,18 @@ function App() {
             overflowY: "auto", // Permite rolar o conteúdo dentro do lado direito se necessário
           }}
         >
-          {/* <h3>Opções Laterais</h3>
-          <ul>
-            <li>Opção A</li>
-            <li>Opção B</li>
-          </ul> */}
+          {/* Bloco de Anúncio no lado direito */}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block", marginBottom: "20px" }}
+            data-ad-client="ca-pub-8402001574373191"
+            data-ad-slot="9337946346"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         </Box>
       </Box>
     </Router>
