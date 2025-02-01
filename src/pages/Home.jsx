@@ -1,11 +1,12 @@
+import { Box, Container, Typography } from "@mui/material";
 import React from "react";
 
-function Home() {
-  return (
-    <div>
-      <h1>Olá, Mundo! Home</h1>
-    </div>
-  );
-}
+const Home = () => (
+  <>
+    <Container >
+      <Typography variant="h4">Calculadora IMC</Typography>
+    </Container>
+  </>
+);
 
 export default Home;

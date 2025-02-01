@@ -1,11 +1,12 @@
+import {  Container, Typography } from "@mui/material";
 import React from "react";
 
-function NotFound() {
-  return (
-    <div>
-      <h1>Olá, Mundo! 404</h1>
-    </div>
-  );
-}
+const NotFound = () => (
+  <>
+    <Container>
+      <Typography variant="h4">Olá, Mundo! About</Typography>
+    </Container>
+  </>
+);
 
 export default NotFound;
