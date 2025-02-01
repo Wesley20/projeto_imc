@@ -9,6 +9,7 @@ html, body {
   height: 100%; /* Garante que o container do React ocupe 100% da altura */
   display: flex;
   flex-direction: column;
+  padding: 0;   /* Remove qualquer padding padrão */
 }
 
 

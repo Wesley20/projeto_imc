@@ -38,7 +38,8 @@ function App() {
         <Box
           sx={{
             width: 250, // Largura fixa
-            backgroundColor: "lightblue",
+            backgroundColor: "#9c9c9c",
+            borderRight: "1px solid #ccc",
             display: "flex",
             flexDirection: "column",
             padding: 2,
@@ -56,14 +57,13 @@ function App() {
         <Box
           sx={{
             flexGrow: 1, // Ocupa o espaço restante
-            backgroundColor: "white",
-            padding: 3,
+            backgroundColor: "#c9c9c9",
             overflowY: "auto", // Permite rolar o conteúdo dentro do centro se necessário
           }}
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            {/* <Route path="/about" element={<About />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
@@ -72,7 +72,8 @@ function App() {
         <Box
           sx={{
             width: 250, // Largura fixa
-            backgroundColor: "lightgreen",
+            backgroundColor: "#9c9c9c",
+            borderLeft: "1px solid #ccc",
             display: "flex",
             flexDirection: "column",
             padding: 2,
